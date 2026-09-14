@@ -1,0 +1,12 @@
+node_modules
+dist
+.vite
+*.local
+.DS_Store
+.idea
+.vscode
+.cursor
+.env
+.env.*
+*.pem
+*.key
