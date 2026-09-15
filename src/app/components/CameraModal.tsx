@@ -1,4 +1,4 @@
-import { X, Camera, Zap, Barcode, ScanLine, FileText, Check, Trash2, Plus, Minus, ChevronRight } from "lucide-react";
+import { X, Camera, Zap, Barcode, ScanLine, FileText, Check, Trash2, Plus, Minus, ChevronRight } from "./icons";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 import { cn } from "../lib/utils";

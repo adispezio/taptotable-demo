@@ -1,4 +1,4 @@
-import { Clock, Flame, ChevronRight, Heart } from "lucide-react";
+import { Clock, Flame, ChevronRight, Heart } from "./icons";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./ImageWithFallback";
 

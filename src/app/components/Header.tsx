@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Home, Package, Bookmark, Settings, ScanLine, Menu, X } from "lucide-react";
+import { Home, Package, Bookmark, Settings, ScanLine, Menu, X } from "./icons";
 import svgPaths from "../lib/logo-paths";
 import { cn } from "../lib/utils";
 

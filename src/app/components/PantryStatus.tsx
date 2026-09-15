@@ -1,4 +1,4 @@
-import { Leaf, AlertCircle, CheckCircle2 } from "lucide-react";
+import { Leaf, AlertCircle, CheckCircle2 } from "./icons";
 
 interface PantryStatusProps {
   onClick?: () => void;

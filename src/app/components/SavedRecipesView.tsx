@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Heart, SlidersHorizontal } from "lucide-react";
+import { Heart, SlidersHorizontal } from "./icons";
 import { RecipeCard } from "./RecipeCard";
 import { DetailedRecipe } from "./RecipeDetail";
 import { cn } from "../lib/utils";

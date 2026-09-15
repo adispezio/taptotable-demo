@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, forwardRef } from "react";
-import { ArrowLeft, Heart, Share2, Clock, Flame, ChefHat, CheckCircle2, Circle, ArrowRight, RotateCcw } from "lucide-react";
+import { ArrowLeft, Heart, Share2, Clock, Flame, ChefHat, CheckCircle2, Circle, ArrowRight, RotateCcw } from "./icons";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, animate } from "motion/react";
 import { ImageWithFallback } from "./ImageWithFallback";
 import { cn } from "../lib/utils";

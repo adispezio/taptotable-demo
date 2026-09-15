@@ -14,7 +14,7 @@ import {
   Minus,
   Plus as PlusIcon,
   Trash2
-} from "lucide-react";
+} from "./icons";
 import { cn } from "../lib/utils";
 import { AddPantryItem } from "./AddPantryItem";
 import { PantryItem } from "../data/pantry";

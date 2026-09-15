@@ -1,5 +1,5 @@
 import { useState, forwardRef } from "react";
-import { Heart, Clock, TrendingUp, Sparkles } from "lucide-react";
+import { Heart, Clock, TrendingUp, Sparkles } from "./icons";
 import { motion, AnimatePresence } from "motion/react";
 import { DetailedRecipe } from "./RecipeDetail";
 import { RECIPES } from "../data/recipes";

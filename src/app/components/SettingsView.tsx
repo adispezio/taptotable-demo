@@ -5,7 +5,7 @@ import {
   Bell, Globe, Trash2, Download, Shield,
   Wheat, Milk, Nut, Egg, Fish, Leaf, Apple,
   ChevronRight
-} from "lucide-react";
+} from "./icons";
 import { cn } from "../lib/utils";
 import { toast } from "sonner";
 

@@ -1,4 +1,4 @@
-import { Clock, ChevronRight, Heart } from "lucide-react";
+import { Clock, ChevronRight, Heart } from "./icons";
 import { DetailedRecipe } from "./RecipeDetail";
 import { ImageWithFallback } from "./ImageWithFallback";
 

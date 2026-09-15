@@ -22,7 +22,7 @@ On a wide viewport you get a desktop sidebar. On smaller screens, use the header
 ## Run it
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -51,6 +51,7 @@ src/
 ## Credits
 
 - UI primitives from [shadcn/ui](https://ui.shadcn.com/) (MIT)
+- Icons from [Lucide](https://lucide.dev/) (ISC)
 - Some photos from [Unsplash](https://unsplash.com/license)
 - [Vite](https://vite.dev/), [React](https://react.dev/), and [Tailwind CSS](https://tailwindcss.com/)
 

@@ -1,4 +1,4 @@
-import { Home, Package, Bookmark, Settings, ScanLine, PanelLeft } from "lucide-react";
+import { Home, Package, Bookmark, Settings, ScanLine, PanelLeft } from "./icons";
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
 import svgPaths from "../lib/logo-paths";
