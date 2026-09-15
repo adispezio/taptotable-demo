@@ -10,7 +10,7 @@ interface RecentlySavedProps {
 
 export function RecentlySaved({ recipes, onRecipeClick, onSeeAll }: RecentlySavedProps) {
   return (
-    <div className="px-6 mb-6">
+    <div className="px-6">
       <div className="bg-stone-800/50 rounded-lg p-5 text-white relative overflow-hidden border border-stone-700/50 transition-colors h-full flex flex-col">
         <div className="relative flex flex-col flex-1">
           <div className="flex justify-between items-start mb-4">

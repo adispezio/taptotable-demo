@@ -6,8 +6,8 @@ interface PantryStatusProps {
 
 export function PantryStatus({ onClick }: PantryStatusProps) {
   return (
-    <div className="px-6 mb-6 cursor-pointer" onClick={onClick}>
-      <div className="bg-brand-500/10 rounded-lg p-5 text-white relative overflow-hidden group transition-all active:scale-98 border border-brand-500/20 h-full">
+    <div className="px-6 cursor-pointer" onClick={onClick}>
+      <div className="bg-brand-500/10 rounded-lg p-5 text-white relative overflow-hidden group active:scale-[0.98] transition-transform border border-brand-500/20 h-full">
         <div className="relative ">
           <div className="flex justify-between items-start mb-4">
             <div>

@@ -126,7 +126,7 @@ export function Dashboard() {
                 {activeTab === "home" && (
                   <div key="home" className="lg:pb-8">
                     <div className="space-y-1 lg:pt-6">
-                      <div className="lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-0">
+                      <div className="mb-6 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-0">
                         <PantryStatus onClick={() => setActiveTab("pantry")} />
                         <div className="hidden lg:block">
                           <RecentlySaved
