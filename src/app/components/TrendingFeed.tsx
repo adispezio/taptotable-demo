@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Heart, Clock, Sparkles } from "./icons";
 import { motion, AnimatePresence } from "motion/react";
 import { DetailedRecipe } from "./RecipeDetail";
@@ -104,6 +104,8 @@ function TrendingCard({
   onSaveToggle: () => void;
   onClick: () => void;
 }) {
+  const hasToggledSave = useRef(false);
+
   return (
     <div
       className="relative w-full aspect-[4/5] rounded-lg overflow-hidden cursor-pointer group active:scale-[0.98]"
@@ -134,14 +136,15 @@ function TrendingCard({
         whileTap={{ scale: 0.85 }}
         onClick={(e) => {
           e.stopPropagation();
+          hasToggledSave.current = true;
           onSaveToggle();
         }}
         className="absolute top-4 right-4 w-[38px] h-[38px] rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center"
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={isSaved ? "saved" : "unsaved"}
-            initial={{ scale: 0.5, opacity: 0 }}
+            initial={hasToggledSave.current ? { scale: 0.5, opacity: 0 } : false}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.5, opacity: 0 }}
             transition={{ duration: 0.2 }}
