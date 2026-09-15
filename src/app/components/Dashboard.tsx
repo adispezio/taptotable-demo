@@ -122,16 +122,9 @@ export function Dashboard() {
               </div>
 
               {/* Tab content */}
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 {activeTab === "home" && (
-                  <motion.div
-                    key="home"
-                    initial={hasNavigatedRef.current ? { opacity: 0 } : false}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="lg:pb-8"
-                  >
+                  <div key="home" className="lg:pb-8">
                     <div className="space-y-1 lg:pt-6">
                       <div className="lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-0">
                         <PantryStatus onClick={() => setActiveTab("pantry")} />
@@ -149,7 +142,7 @@ export function Dashboard() {
                         onRecipeClick={(recipe) => handleRecipeClick(recipe)}
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 )}
 
                 {activeTab === "pantry" && (

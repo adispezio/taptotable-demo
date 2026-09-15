@@ -1,5 +1,5 @@
-import { useState, forwardRef } from "react";
-import { Heart, Clock, TrendingUp, Sparkles } from "./icons";
+import { useState } from "react";
+import { Heart, Clock, Sparkles } from "./icons";
 import { motion, AnimatePresence } from "motion/react";
 import { DetailedRecipe } from "./RecipeDetail";
 import { RECIPES } from "../data/recipes";
@@ -93,27 +93,20 @@ interface TrendingFeedProps {
   onRecipeClick: (recipe: DetailedRecipe) => void;
 }
 
-const TrendingCard = forwardRef<HTMLDivElement, {
-  trending: TrendingRecipe;
-  isSaved: boolean;
-  onSaveToggle: () => void;
-  onClick: () => void;
-  index: number;
-}>(function TrendingCard({
+function TrendingCard({
   trending,
   isSaved,
   onSaveToggle,
   onClick,
-  index,
-}, ref) {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
+}: {
+  trending: TrendingRecipe;
+  isSaved: boolean;
+  onSaveToggle: () => void;
+  onClick: () => void;
+}) {
   return (
-    <motion.div
-      ref={ref}
-      initial={false}
-      whileTap={{ scale: 0.98 }}
-      className="relative w-full aspect-[4/5] rounded-lg overflow-hidden cursor-pointer group"
+    <div
+      className="relative w-full aspect-[4/5] rounded-lg overflow-hidden cursor-pointer group active:scale-[0.98]"
       onClick={onClick}
     >
       {/* Image */}
@@ -121,15 +114,9 @@ const TrendingCard = forwardRef<HTMLDivElement, {
         <img
           src={trending.image}
           alt={trending.recipe.title}
-          className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 pointer-events-none ${
-            imageLoaded ? "opacity-100" : "opacity-0"
-          }`}
-          onLoad={() => setImageLoaded(true)}
+          className="w-full h-full object-cover [transform:scale(1)] group-hover:[transform:scale(1.05)] transition-transform duration-700 pointer-events-none"
         />
       </div>
-      {!imageLoaded && (
-        <div className="absolute inset-0 bg-stone-800 animate-pulse pointer-events-none rounded-lg" />
-      )}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 via-50% to-transparent pointer-events-none rounded-lg" />
@@ -190,9 +177,9 @@ const TrendingCard = forwardRef<HTMLDivElement, {
           </span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
-});
+}
 
 export function TrendingFeed({
   savedRecipeIds,
@@ -222,18 +209,15 @@ export function TrendingFeed({
 
       {/* Feed */}
       <div className="px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <AnimatePresence mode="popLayout">
-          {visibleRecipes.map((trending, index) => (
-            <TrendingCard
-              key={trending.recipe.id}
-              trending={trending}
-              isSaved={savedRecipeIds.has(trending.recipe.id)}
-              onSaveToggle={() => onSaveToggle(trending.recipe.id)}
-              onClick={() => onRecipeClick({ ...trending.recipe, image: trending.image })}
-              index={index}
-            />
-          ))}
-        </AnimatePresence>
+        {visibleRecipes.map((trending) => (
+          <TrendingCard
+            key={trending.recipe.id}
+            trending={trending}
+            isSaved={savedRecipeIds.has(trending.recipe.id)}
+            onSaveToggle={() => onSaveToggle(trending.recipe.id)}
+            onClick={() => onRecipeClick({ ...trending.recipe, image: trending.image })}
+          />
+        ))}
       </div>
     </div>
   );
