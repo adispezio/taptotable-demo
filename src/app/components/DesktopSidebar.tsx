@@ -28,7 +28,11 @@ export function DesktopSidebar({ activeTab, onTabChange, onScanClick, expanded, 
       className="hidden lg:flex fixed left-0 top-0 bottom-0 z-30 flex-col border-r border-stone-800 transition-colors"
     >
       {/* Logo area */}
-      <div className="flex items-center gap-2 px-5 pt-5 pb-2 h-16 overflow-hidden">
+      <button
+        onClick={() => onTabChange("home")}
+        className="flex items-center gap-2 px-5 pt-5 pb-2 h-16 overflow-hidden cursor-pointer"
+        aria-label="TapToTable home"
+      >
         <div className="w-[26px] h-[26px] shrink-0 relative rotate-[10deg] text-white">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 27.6237 26.8833">
             <path d={svgPaths.p2589a900} fill="currentColor" />
@@ -43,7 +47,7 @@ export function DesktopSidebar({ activeTab, onTabChange, onScanClick, expanded, 
         >
           TapToTable
         </motion.span>
-      </div>
+      </button>
 
       {/* Toggle button */}
       <button

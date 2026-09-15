@@ -49,7 +49,11 @@ export function Header({ activeTab = "home", onTabChange, onScanClick }: HeaderP
       {/* Header bar */}
       <div className="flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md lg:pt-6 lg:pb-4 lg:border-b lg:border-stone-800">
         {/* Logo — mobile only */}
-        <div className="flex items-center gap-2 text-white lg:hidden">
+        <button
+          onClick={() => handleTabChange("home")}
+          className="flex items-center gap-2 text-white lg:hidden cursor-pointer"
+          aria-label="TapToTable home"
+        >
           <div className="w-[26px] h-[26px] relative rotate-[10deg]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 27.6237 26.8833">
               <path d={svgPaths.p2589a900} fill="currentColor" />
@@ -57,7 +61,7 @@ export function Header({ activeTab = "home", onTabChange, onScanClick }: HeaderP
             </svg>
           </div>
           <p className="font-['Averia_Serif_Libre'] text-[32px] tracking-[-2px] leading-[28px]">TapToTable</p>
-        </div>
+        </button>
         {/* Title — desktop only */}
         <h1 className="hidden lg:block text-xl font-bold text-stone-100">Dashboard</h1>
 
